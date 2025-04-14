@@ -182,7 +182,10 @@ Join us and become part of a city that values your narrative, respects your jour
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-              <Link href="/join" className="$1" prefetch={false}>$2</Link>
+              <Link href="/join" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Join Abyssal RP</h3>
+  <p className="text-white/60">Enter the city and join our Discord community.</p>
+</Link>
               <Link href="/rules" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
                 <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
                 <p className="text-white/60">Learn about our RP standards and expectations.</p>

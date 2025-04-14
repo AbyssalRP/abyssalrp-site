@@ -94,7 +94,7 @@ export default function JoinPage() {
           💬 Join Our Discord
         </a>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl text-center">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl text-center">
           <Link href="/rules" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition">
             <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
             <p className="text-white/60">Coming soon — our server rules and roleplay standards.</p>

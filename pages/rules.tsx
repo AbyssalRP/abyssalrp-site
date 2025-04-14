@@ -208,7 +208,7 @@ export default function RulesPage() {
               {activeCategory}
             </h2>
             <ul className="space-y-2">
-              {categories[activeCategory].map((rule, index) => (
+            {categories[activeCategory as keyof typeof categories].map((rule, index) => (
                 rule.endsWith(":") ? (
                   <li key={index} className="text-base md:text-lg font-bold mt-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent list-none">
                     {rule}

@@ -89,7 +89,6 @@ export default function Home() {
           filter: 'blur(80px) brightness(1.2)'
         }}
       />
-
       <div className="fixed inset-0 z-10 bg-gradient-to-b from-transparent via-black/20 to-black/40 pointer-events-none" />
       <div className="fixed inset-0 z-0 pointer-events-none animate-pulse" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.025), transparent 70%)' }} />
 
@@ -134,74 +133,74 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {showMain && (
-          <motion.div
-            key="main"
-            className="relative z-20 flex flex-col items-center justify-center min-h-screen text-white text-center px-6"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
+      <div className={`transition-opacity duration-500 ${showMain ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <AnimatePresence>
+          {showMain && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key="main"
+              className="relative z-20 flex flex-col items-center justify-center min-h-screen text-white text-center px-6"
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
-              className="max-w-3xl text-left text-white bg-black/40 border border-white/20 rounded-2xl p-8 mb-12 shadow-xl backdrop-blur-md"
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                Welcome to Abyssal RP
-              </h2>
-              <p className="leading-relaxed text-sm md:text-base whitespace-pre-line bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
-                If you're here, chances are you've walked the same path many of us have. You've spent hours, days, even months searching for a city that truly feels like home—a city free from admin abuse, metagaming, and toxicity. Like you, we've grown tired of servers dominated by repetitive cop-and-criminal scenarios, neglecting the vibrant experiences that civilians crave.
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+                className="max-w-3xl text-left text-white bg-black/40 border border-white/20 rounded-2xl p-8 mb-12 shadow-xl backdrop-blur-md"
+              >
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  Welcome to Abyssal RP
+                </h2>
+                <p className="leading-relaxed text-sm md:text-base whitespace-pre-line bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+{`If you're here, chances are you've walked the same path many of us have. You've spent hours, days, even months searching for a city that truly feels like home—a city free from admin abuse, metagaming, and toxicity. Like you, we've grown tired of servers dominated by repetitive cop-and-criminal scenarios, neglecting the vibrant experiences that civilians crave.
 
 At Abyssal RP, we're building something different. We're not just another GTA RP server—we're a thriving community built by roleplayers, for roleplayers. Our vision is clear: to foster a balanced ecosystem where every character has a meaningful story to tell. Whether you're a seasoned criminal mastermind, an upstanding officer of the law, or a civilian running a business or simply exploring your creativity, your story matters here.
 
 We passionately believe that great roleplay isn't defined by power or status, but by rich interactions, immersive experiences, and fair play. Our team is dedicated to transparency, impartial moderation, and genuine community engagement, ensuring Abyssal RP is your escape from the frustrations you've encountered elsewhere.
 
-Join us and become part of a city that values your narrative, respects your journey, and encourages you to thrive. Abyssal RP—more than just a city; it's your new home.
-              </p>
+Join us and become part of a city that values your narrative, respects your journey, and encourages you to thrive. Abyssal RP—more than just a city; it's your new home.`}
+                </p>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+                className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-float"
+              >
+                Welcome to the City
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5 }}
+                className="max-w-2xl text-lg opacity-80 mb-12 bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent"
+              >
+                This is where your journey begins. Explore the rules, meet the community, or head straight into the world of Abyssal RP.
+              </motion.p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <Link href="/join" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Join Abyssal RP</h3>
+                  <p className="text-white/60">Enter the city and join our Discord community.</p>
+                </Link>
+                <Link href="/rules" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
+                  <p className="text-white/60">Learn about our RP standards and expectations.</p>
+                </Link>
+                <Link href="/preview" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">World Preview</h3>
+                  <p className="text-white/60">Get a sneak peek of what’s coming to Abyssal RP.</p>
+                </Link>
+              </div>
             </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
-              className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-xl bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-float"
-            >
-              Welcome to the City
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
-              className="max-w-2xl text-lg opacity-80 mb-12 bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent"
-            >
-              This is where your journey begins. Explore the rules, meet the community, or head straight into the world of Abyssal RP.
-            </motion.p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-              <Link href="/join" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
-  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Join Abyssal RP</h3>
-  <p className="text-white/60">Enter the city and join our Discord community.</p>
-</Link>
-              <Link href="/rules" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
-                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
-                <p className="text-white/60">Learn about our RP standards and expectations.</p>
-              </Link>
-
-              
-
-              <Link href="/preview" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
-                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">World Preview</h3>
-                <p className="text-white/60">Get a sneak peek of what’s coming to Abyssal RP.</p>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </>
   );
 }
+
 

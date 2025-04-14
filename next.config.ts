@@ -1,8 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+  webpack: (config) => {
+    config.externals = {
+      ...config.externals,
+      bcrypt: 'commonjs bcrypt', // 🛡 prevent build from bundling bcrypt
+    };
+    return config;
+  },
 };
 
 export default nextConfig;

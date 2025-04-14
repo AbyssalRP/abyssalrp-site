@@ -1,4 +1,4 @@
-// /pages/index.tsx
+import Link from "next/link";
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -182,24 +182,20 @@ Join us and become part of a city that values your narrative, respects your jour
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-              {["Rules", "Join Our Discord", "World Preview"].map((title, i) => (
-                <motion.div
-                  key={title}
-                  className="bg-white/10 border border-white/20 rounded-2xl p-6 text-white backdrop-blur hover:bg-white/20 transition shadow-md hover:shadow-lg"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + i * 0.2, duration: 0.8 }}
-                >
-                  <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
-                    {title}
-                  </h3>
-                  <p className="opacity-70 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                    {title === "Rules" && "Coming soon — our server rules and roleplay standards."}
-                    {title === "Join Our Discord" && "Click here to join our growing RP community."}
-                    {title === "World Preview" && "Coming soon — sneak peeks of our custom world and systems."}
-                  </p>
-                </motion.div>
-              ))}
+              <Link href="/rules" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
+                <p className="text-white/60">Learn about our RP standards and expectations.</p>
+              </Link>
+
+              <Link href="/join" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Join Us</h3>
+                <p className="text-white/60">Enter the city and join our Discord community.</p>
+              </Link>
+
+              <Link href="/preview" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition text-center">
+                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">World Preview</h3>
+                <p className="text-white/60">Get a sneak peek of what’s coming to Abyssal RP.</p>
+              </Link>
             </div>
           </motion.div>
         )}

@@ -99,10 +99,7 @@ export default function JoinPage() {
             <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Rules</h3>
             <p className="text-white/60">Coming soon — our server rules and roleplay standards.</p>
           </Link>
-          <Link href="/join" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition">
-            <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Join Our Discord</h3>
-            <p className="text-white/60">Click here to join our growing RP community.</p>
-          </Link>
+          
           <Link href="/preview" className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur hover:bg-white/20 transition">
             <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">World Preview</h3>
             <p className="text-white/60">Coming soon — sneak peeks of our custom world and systems.</p>
